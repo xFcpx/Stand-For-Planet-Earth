@@ -25,6 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Draw the player and the gun
+draw_self();
+
+
+instance_create  (x,y,obj_shotgun);
+
+
+
+
+/*shotgun_offset_x = 15;
+shotgun_offset_y = 15;
+
+xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
+ypos = y + lengthdir_y(shotgun_offset_y, 15);
+
+instance_create(xpos, ypos, obj_shotgun);
+
+
+/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Initialize player
 dir = 0;
 hspd = 0;
@@ -184,48 +224,6 @@ while (!collision &amp;&amp; distance_to_point(temp_x, temp_y) &lt; 250){
     }
     }
     
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw the player and the gun
-draw_self();
-//instance_create  (x,y,obj_shotgun);
-
-shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, image_angle); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, image_angle);
-
-shotgun = instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
-
-fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
-
-if (fire){
-
-draw_sprite_ext(spr_shotgun_fire, -1, x, y, 1, 1, dir-90, c_white, 1);}
 </string>
           </argument>
         </arguments>

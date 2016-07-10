@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>
 
-speed=8 //bullet speed 
+speed=20 //bullet speed 
 direction=point_direction(x,y,mouse_x, mouse_y) + random_range(-obj_shotgun.vari, obj_shotgun.vari)
 
 </string>

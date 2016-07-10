@@ -31,8 +31,11 @@ hspd = 0;
 vspd = 0;
 spd = 8 ;
 vari = 5;
-shotgun_offset_x = 5;
-shotgun_offset_y = 5;
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -58,15 +61,21 @@ shotgun_offset_y = 5;
             <string>///mouvement shotgun
 image_angle = obj_body.image_angle;
 
-shotgun_offset_x = 15;
+sprite_set_offset(obj_shotgun, obj_body.x, obj_body.y);
+obj_shotgun.x=obj_body.x+lengthdir_x(9.22,obj_body.image_angle+49.40);
+obj_shotgun.y=obj_body.y+lengthdir_y(9.22,obj_body.image_angle+49.40);
+
+
+/*shotgun_offset_x = 15;
 shotgun_offset_y = 15;
 
 xpos = obj_body.x + lengthdir_x(shotgun_offset_x, image_angle); // or direction
 ypos = obj_body.y + lengthdir_y(shotgun_offset_y, image_angle);
 
 
-/*x=obj_body.x;
-y=obj_body.y;
+x=obj_body.x+lengthdir_x(9.22,obj_body.direction+49.40);
+y=obj_body.y+lengthdir_y(9.22,obj_body.direction+49.40);
+
 </string>
           </argument>
         </arguments>
