@@ -54,10 +54,10 @@ alarm [0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the player and the gun
+            <string>///Draw the player 
 draw_self();
 
-
+//instance_create (x,y,obj_hero_tracker);
 
 
 

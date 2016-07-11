@@ -82,29 +82,19 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///blend mod
-/*draw_set_blend_mode(bm_subtract);
+            <string>
+draw_set_blend_mode(bm_subtract);
 draw_rectangle (449,160, 736,383,false)
-draw_set_blend_mode(bm_normal);*/
-var lightOff=true;
+draw_set_blend_mode(bm_normal);
 
 if position_meeting (obj_lightmap.x, obj_lightmap.y, obj_body)
 {
 
-lightOff = false
+instance_destroy()
 }
 
 
-if !lightOff {
-draw_set_blend_mode(bm_normal);
 
-
-}
-else {
-
-draw_set_blend_mode(bm_subtract);
-draw_rectangle (449,160, 736,383,false)
-draw_set_blend_mode(bm_normal);}
 </string>
           </argument>
         </arguments>

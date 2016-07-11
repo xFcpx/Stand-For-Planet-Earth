@@ -67,6 +67,7 @@
       <object>objects\obj_hero_melee_attack</object>
     </objects>
     <object>objects\obj_bullet3</object>
+    <object>objects\obj_hero_tracker</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
