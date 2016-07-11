@@ -100,7 +100,7 @@ draw_set_blend_mode(bm_normal);
 
 
 }
-else if lightOff{
+else {
 
 draw_set_blend_mode(bm_subtract);
 draw_rectangle (449,160, 736,383,false)

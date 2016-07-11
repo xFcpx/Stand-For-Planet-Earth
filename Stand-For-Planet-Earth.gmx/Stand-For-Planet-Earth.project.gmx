@@ -27,10 +27,19 @@
     <sprite>sprites\spr_shotgun</sprite>
     <sprite>sprites\spr_bullet2</sprite>
     <sprite>sprites\spr_light</sprite>
+    <sprites name="Hero">
+      <sprite>sprites\spr_hero_idle</sprite>
+      <sprite>sprites\spr_hero_shot</sprite>
+      <sprite>sprites\spr_hero_move</sprite>
+      <sprite>sprites\spr_hero_reload</sprite>
+      <sprite>sprites\spr_hero_melee_attack</sprite>
+    </sprites>
+    <sprite>sprites\spr_bullet3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\parquetbck</background>
     <background>background\GreyBlocks_Bot_C</background>
+    <background>background\bkg_pave</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -50,8 +59,17 @@
     <object>objects\obj_bullet2</object>
     <object>objects\obj_shotgun</object>
     <object>objects\obj_lightmap</object>
+    <objects name="Hero">
+      <object>objects\obj_hero_idle</object>
+      <object>objects\obj_hero_reload</object>
+      <object>objects\obj_hero_move</object>
+      <object>objects\obj_hero_shot</object>
+      <object>objects\obj_hero_melee_attack</object>
+    </objects>
+    <object>objects\obj_bullet3</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room1</room>
     <room>rooms\room2</room>
   </rooms>
   <help>
