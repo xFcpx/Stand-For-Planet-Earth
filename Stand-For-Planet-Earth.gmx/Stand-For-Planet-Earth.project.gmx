@@ -26,6 +26,7 @@
     <sprite>sprites\spr_pant4</sprite>
     <sprite>sprites\spr_shotgun</sprite>
     <sprite>sprites\spr_bullet2</sprite>
+    <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\parquetbck</background>
@@ -33,6 +34,10 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\obj_jambesHG</object>
+    <object>objects\obj_jambesH</object>
+    <object>objects\obj_jambesHD</object>
+    <object>objects\obj_jambesV</object>
     <object>objects\obj_caca</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_sol</object>
@@ -42,13 +47,9 @@
     <object>objects\obj_shot</object>
     <object>objects\obj_heal</object>
     <object>objects\obj_body</object>
-    <object>objects\obj_jambesV</object>
-    <object>objects\obj_jambesH</object>
-    <object>objects\obj_jambesHG</object>
-    <object>objects\obj_jambesHD</object>
     <object>objects\obj_bullet2</object>
-    <object>objects\object14</object>
     <object>objects\obj_shotgun</object>
+    <object>objects\obj_lightmap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

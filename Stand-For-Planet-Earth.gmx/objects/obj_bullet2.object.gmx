@@ -30,6 +30,9 @@
 speed=20 //bullet speed 
 direction=point_direction(x,y,mouse_x, mouse_y) + random_range(-obj_shotgun.vari, obj_shotgun.vari)
 
+
+x=obj_shotgun.x+lengthdir_x(6.08,obj_shotgun.direction+80.54);
+y=obj_shotgun.y+lengthdir_y(6.08,obj_shotgun.direction+80.54);
 </string>
           </argument>
         </arguments>

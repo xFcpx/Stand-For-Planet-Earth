@@ -25,26 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the player and the gun
-draw_self();
-
-
-instance_create  (x,y,obj_shotgun);
-
-
-
-
-/*shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, 15);
-
-instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
-
+            <string>///Initialize player
+dir = 0;
+hspd = 0;
+vspd = 0;
+spd = 8 ;
+shot_delay = 2; //Cadence de tir
+heal_delay = 1; // Cadence de heal
+vari = 1;
+alarm [0] = 0;
 </string>
           </argument>
         </arguments>
@@ -65,15 +54,26 @@ instance_create(xpos, ypos, obj_shotgun);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize player
-dir = 0;
-hspd = 0;
-vspd = 0;
-spd = 8 ;
-shot_delay = 2; //Cadence de tir
-heal_delay = 1; // Cadence de heal
-vari = 1;
-alarm [0] = 0;
+            <string>///Draw the player and the gun
+draw_self();
+
+
+instance_create  (x,y,obj_shotgun);
+
+
+
+
+/*shotgun_offset_x = 15;
+shotgun_offset_y = 15;
+
+xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
+ypos = y + lengthdir_y(shotgun_offset_y, 15);
+
+instance_create(xpos, ypos, obj_shotgun);
+
+
+/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
+
 </string>
           </argument>
         </arguments>
@@ -119,57 +119,6 @@ alarm [0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///création mouvements des jambes 
-hspd = keyboard_check(ord('D'))-keyboard_check(ord('Q'));
-vspd = keyboard_check(ord('S'))-keyboard_check(ord('Z'));
-
-if (((vspd=1 &amp;&amp; hspd=1) || (vspd=-1 &amp;&amp; hspd=-1))&amp;&amp; instance_number (obj_jambesHG)= 0 ){ //jambes haut gauche bas droite
-instance_create (x,y,obj_jambesHG);}
-
-else if ((vspd=0 || hspd=0) || instance_number (obj_jambesHG) !=1) {
-with(obj_jambesHG) {instance_destroy()}}
-
-if (((vspd=-1 &amp;&amp; hspd=1) || (vspd=1 &amp;&amp; hspd=-1))&amp;&amp; instance_number (obj_jambesHD)= 0 ){ //jambes haut droit bas gauche
-instance_create (x,y,obj_jambesHD);}
-
-else if ((vspd=0 || hspd=0) || instance_number (obj_jambesHD)!=1) {
-with(obj_jambesHD) {instance_destroy()}}
-
-if (((vspd=1 &amp;&amp; hspd =0 ) || (vspd=-1 &amp;&amp; hspd =0 ))&amp;&amp; instance_number (obj_jambesV)= 0 ){ //jambes haut bas
-instance_create (x,y,obj_jambesV);}
-
-else if (vspd=0 || hspd!=0 || instance_number (obj_jambesV) !=1) {
-with(obj_jambesV) {instance_destroy()}}
-
-if (((hspd=1 &amp;&amp; vspd =0)|| (hspd=-1 &amp;&amp; vspd =0))&amp;&amp; instance_number (obj_jambesH)= 0 ){ //jambes droite gauche
-instance_create (x,y,obj_jambesH);}
-
-else if (hspd=0 || vspd!=0 ||instance_number (obj_jambesH) !=1) {
-with(obj_jambesH) {instance_destroy()}}
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Move the player
 hspd = keyboard_check(ord('D'))-keyboard_check(ord('Q'));
 vspd = keyboard_check(ord('S'))-keyboard_check(ord('Z'));
@@ -187,7 +136,7 @@ if (!place_meeting(x, y+vspd*spd, obj_wall)) {
     }
 image_angle = dir -90;
 
-if (fire) {
+/*if (fire) {
 // RESET ALARM
 alarm[0] = shot_delay
 
@@ -224,6 +173,60 @@ while (!collision &amp;&amp; distance_to_point(temp_x, temp_y) &lt; 250){
     }
     }
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///création mouvements des jambes 
+hspd = keyboard_check(ord('D'))-keyboard_check(ord('Q'));
+vspd = keyboard_check(ord('S'))-keyboard_check(ord('Z'));
+
+
+
+
+if (((vspd=1 &amp;&amp; hspd=1) || (vspd=-1 &amp;&amp; hspd=-1))&amp;&amp; instance_number (obj_jambesHG)= 0 ){ //jambes haut gauche bas droite
+instance_create (obj_body.x,obj_body.y,obj_jambesHG);}
+
+else if ((vspd=0 || hspd=0) || instance_number (obj_jambesHG) !=1) {
+with(obj_jambesHG) {instance_destroy()}}
+
+if (((vspd=-1 &amp;&amp; hspd=1) || (vspd=1 &amp;&amp; hspd=-1))&amp;&amp; instance_number (obj_jambesHD)= 0 ){ //jambes haut droit bas gauche
+instance_create (obj_body.x,obj_body.y,obj_jambesHD);}
+
+else if ((vspd=0 || hspd=0) || instance_number (obj_jambesHD)!=1) {
+with(obj_jambesHD) {instance_destroy()}}
+
+if (((vspd=1 &amp;&amp; hspd =0 ) || (vspd=-1 &amp;&amp; hspd =0 ))&amp;&amp; instance_number (obj_jambesV)= 0 ){ //jambes haut bas
+instance_create (obj_body.x,obj_body.y,obj_jambesV);}
+
+else if (vspd=0 || hspd!=0 || instance_number (obj_jambesV) !=1) {
+with(obj_jambesV) {instance_destroy()}}
+
+if (((hspd=1 &amp;&amp; vspd =0)|| (hspd=-1 &amp;&amp; vspd =0))&amp;&amp; instance_number (obj_jambesH)= 0 ){ //jambes droite gauche
+instance_create (obj_body.x,obj_body.y,obj_jambesH);}
+
+else if (hspd=0 || vspd!=0 ||instance_number (obj_jambesH) !=1) {
+with(obj_jambesH) {instance_destroy()}}
+
+
+
+
 </string>
           </argument>
         </arguments>
